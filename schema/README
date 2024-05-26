@@ -1,0 +1,6 @@
+Schema files are processed by rcsm provider type, and if adding new schema files to the RMDMIA place 
+them in the correct provider folder. If that folder does not exist create that folder to match the 
+associated rcsm provider name.
+Schema files should be structured in a package based folder structure. The package and file name will 
+be passed to the associated RCSM Instruction Object generator for handling, then the file will be moved 
+to a processed folder to avoid being reprocessed at a following startup.

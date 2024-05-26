@@ -1,0 +1,25 @@
+Unique Properties:
+rcsm_plugins_folder property key is associated with the RCSM Plugins deployment directory. Plugins will be loaded from the plugins folder, and the conf directory should contain the plugin provider properties file. This is the file that will be loaded for the associated provider by the RCSM Manager at startup. If a properties file already exists for the associated RCSM plugin one will not be copied from the Jar file conf directory to the conf/rcsm directory, and the properties file located in the conf/rcsm directory will be loaded at startup. If a properties file does not exist in the Jar file, or the conf/rcsm directory a Properties Object will not be initialized in the RCSM Provider.
+rcsm_plugins_folder=../plugins/rcsm_plugins
+
+The rcsm.properties file is formatted in the following format:
+<rcsm_id>=The numeric RCSM ID that is defined in the properties file starting with 0 and incrementing by one each additional provider that is added.
+name=The RCSM Provider name as defined in the RCSM Provider abstract class implementation, that is returned by the getName() RCSMnterface method.
+version=(optional) The RCSM Provider version as a Decimal number defined in the RCSM Provider abstract class implementation, that is returned by the getVersion() RCSMnterface method.
+class=The RCSMProvider implementation class. Example: org.happy.artist.rmdmia.rcsm.providers.ros.ROSNode
+
+RCSM Provider Definition Example:
+plugin_props_folder_key=conf/rcsm
+rcsm_plugins_folder=plugins/rcsm
+0.name=ros
+0.version=1.0
+0.class=org.happy.artist.rmdmia.rcsm.providers.ros.ROSNode
+0.enabled=true
+
+The associated RCSM Provider Properties file will be found in the ./conf/rcsm subdirectory using the following RCSM Provider Properties file naming format: 
+
+RCSMInterface.getName() + "_v" + RCSMInterface.getVersion() + ".properties"
+
+if a version number of 0 is returned the following properties file naming will be used:
+
+RCSMInterface.getName() + ".properties"

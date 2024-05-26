@@ -1,0 +1,23 @@
+Unique Properties:
+roci_plugins_folder property key is associated with the ROCI Plugins deployment directory. Plugins will be loaded from the plugins folder, and the conf directory should contain the plugin provider properties file. This is the file that will be loaded for the associated provider by the ROCI Manager at startup. If a properties file already exists for the associated ROCI plugin one will not be copied from the Jar file conf directory to the conf/roci directory, and the properties file located in the conf/roci directory will be loaded at startup. If a properties file does not exist in the Jar file, or the conf/roci directory a Properties Object will not be initialized in the ROCI Provider.
+roci_plugins_folder=../plugins/roci_plugins
+
+The roci.properties file is formatted in the following format:
+<roci_id>=The numeric ROCI ID that is defined in the properties file starting with 0 and incrementing by one each additional provider that is added.
+name=The ROCI Provider name as defined in the ROCI Provider abstract class implementation, that is returned by the getName() ROCInterface method.
+version=(optional) The ROCI Provider version as a Decimal number defined in the ROCI Provider abstract class implementation, that is returned by the getVersion() ROCInterface method.
+class=The ROCIProvider implementation class. Example: org.happy.artist.drc.roci.plugins.ROCITelnetPlugin
+
+ROCI Provider Definition Example:
+0.name=telnet
+0.version=1.0
+0.class=org.happy.artist.drc.roci.plugins.ROCITelnetPlugin
+0.enabled=true
+
+The associated ROCI Provider Properties file will be found in the ./conf/roci subdirectory using the following ROCI Provider Properties file naming format: 
+
+ROCInterface.getName() + "_v" + ROCInterface.getVersion() + ".properties"
+
+if a version number of 0 is returned the following properties file naming will be used:
+
+ROCInterface.getName() + ".properties"

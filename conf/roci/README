@@ -1,0 +1,2 @@
+ROCI Provider Properties files are read at RMDMIA Startup initialization of ROCI, as identified in the roci.properties file in the roci parent directory. ROCI Provider Properties files will appear in the conf/roci directory using the naming convention of <plugin_name>.v<decimal_product version>.properties.
+

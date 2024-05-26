@@ -1,0 +1,10 @@
+roci_plugins_folder=plugins/roci
+plugin_props_folder_key=conf/roci
+0.enabled=true
+0.version=1.0
+0.class=org.happy.artist.rmdmia.roci.plugins.ROSBagControllerPlugin
+0.name=rosbag_test_gui
+1.enabled=true
+1.version=1.0
+1.class=org.happy.artist.rmdmia.roci.plugins.ROSConfigurationManager
+1.name=ros_configuration_manager

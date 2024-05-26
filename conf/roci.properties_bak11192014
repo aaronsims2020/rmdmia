@@ -1,0 +1,14 @@
+0.enabled=true
+0.version=1.0
+roci_plugins_folder=plugins/roci
+0.class=org.happy.artist.rmdmia.roci.plugins.ROSConfigurationManager
+plugin_props_folder_key=conf/roci
+0.name=ros_configuration_manager
+1.enabled=false
+1.version=1.0
+1.class=org.happy.artist.rmdmia.roci.plugins.ROCIROSAutoTuner
+1.name=ros_auto_tuner
+2.enabled=false
+2.version=1.0
+2.class=org.happy.artist.rmdmia.roci.plugins.ROSTurtlesimKeyController
+2.name=ros_key_control_sample

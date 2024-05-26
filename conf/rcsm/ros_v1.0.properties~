@@ -1,0 +1,7 @@
+master_url=http://thyatira2:11311/
+caller_id=/rmdmia
+hostname=thyatira
+ros_message_pool_size=1024
+attempt_probe_save_on_md5_mismatch=true
+startup_auto_config=true
+
